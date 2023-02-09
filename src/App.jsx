@@ -1,11 +1,11 @@
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom"
 
-import ItemListContainer from './componentes/ItemListContainer'
-import NavBar from './componentes/NavBar'
-import ProductoDetalle from "./componentes/ProductoDetalle"
+import NavBar from './components/NavBar'
+import Banner from "./components/Banner"
+import DetailProductContainer from "./components/DetailProductContainer"
+import ItemListContainer from './components/ItemListContainer'
 
 import './App.css'
-
 
 
 function App() {
@@ -14,14 +14,18 @@ function App() {
     
     <BrowserRouter>
 
-      <NavBar />
+      <NavBar/>
+
+      <Banner/>
 
       <Routes>
         <Route path="/" element={ <ItemListContainer /> }></Route>
 
         <Route path="/apartado/:NombreApartado" element={ <ItemListContainer /> }></Route>
 
-        <Route path="/producto/:idProducto" element={ <ProductoDetalle /> }></Route>
+        <Route path="/producto/:idProducto" element={ <DetailProductContainer /> }></Route>
+
+        {/* <Route path="/carrito" element={  }></Route>*/}
 
         <Route path="*" element={ <Navigate to={"/"} />}></Route>
       </Routes>
@@ -32,5 +36,3 @@ function App() {
 }
 
 export default App
-
-//         <Route></Route>

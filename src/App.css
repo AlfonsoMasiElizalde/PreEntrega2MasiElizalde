@@ -1,5 +1,23 @@
-/* Nav-Bar */
+body {
+  margin: 0px;
+}
+ul {
+  list-style: none;
+}
+li a {
+  text-decoration: none;
+  color: #fff;
+}
+h1 a {
+  text-decoration: none;
+  color: #fff;
+}
+link {
+  text-decoration: none;
+  color: #fff;
+}
 
+/* Nav-Bar */
 .nav-container {
   position: sticky;
   z-index: 3;
@@ -31,8 +49,30 @@
   cursor: pointer;
 }
 
-/* Catalogo Productos */
+/* Banner */
+.banner {
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/multimedia/fondo-relleno.jpg);
+}
+.banner-container {
+  text-align: center;
+  padding: 15% 0;
+}
+.banner h3 {
+  margin: 0;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-size: 62px;
+  font-family: bold;
+}
+.banner p {
+  font-size: 30px;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
 
+/* Catalogo Productos */
 .mostrador-productos {
   display: flex;
   justify-content: space-around;

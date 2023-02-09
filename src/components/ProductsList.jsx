@@ -1,5 +1,5 @@
 
-const productos = [
+export const productos = [
   {
       id: "1",
       producto: "Pan blanco",
@@ -7,7 +7,8 @@ const productos = [
       descripcion: "Pan blanco, Bimbo artesano, 500g",
       precio: 556,
       cantidad: 1,
-      imagen: "multimedia/pan-blanco-bimbo-artesano-500g.webp"
+      imagen: "multimedia/pan-blanco-bimbo-artesano-500g.webp",
+      categoria: "Despensa"
   },
   {
       id: 2,
@@ -16,7 +17,8 @@ const productos = [
       descripcion: "Queso feteado, SanCor dambo, 200g",
       precio: 548,
       cantidad: 1,
-      imagen: "multimedia/queso-feteado-sancor-danbo-200g.webp"
+      imagen: "multimedia/queso-feteado-sancor-danbo-200g.webp",
+      categoria: "Heladera"
   },
   {
       id: 3,
@@ -25,7 +27,8 @@ const productos = [
       descripcion: "Jamon cocido feteado, Paladini, 200g",
       precio: 498,
       cantidad: 1,
-      imagen: "multimedia/jamón-cocido-paladini-feteado-fetas-finas-200g.webp"
+      imagen: "multimedia/jamón-cocido-paladini-feteado-fetas-finas-200g.webp",
+      categoria: "Heladera"
   },
   {
       id: 4,
@@ -34,7 +37,9 @@ const productos = [
       descripcion: "Gaseosa, Coca Cola sabor original, 2.25lts",
       precio: 431,
       cantidad: 1,
-      imagen: "/multimedia/gaseosa-coca-cola-sabor-original-2.25lts.webp"
+      imagen: "/multimedia/gaseosa-coca-cola-sabor-original-2.25lts.webp",
+      categoria: "Bebida"
+      
   },
   {
       id: 5,
@@ -43,7 +48,8 @@ const productos = [
       descripcion: "Papas fritas bolsa, Lays clasicas, 249g",
       precio: 596,
       cantidad: 1,
-      imagen: "/multimedia/papas-fritas-lays-clasicas-bolsa-249g.webp"
+      imagen: "/multimedia/papas-fritas-lays-clasicas-bolsa-249g.webp",
+      categoria: "Despensa"
   },
   {
       id: 6,
@@ -52,7 +58,8 @@ const productos = [
       descripcion: "Atun en aceite, La Campagnola lomitos, 170g",
       precio: 568,
       cantidad: 1,
-      imagen: "/multimedia/atun-en-aceite-la-campagnola-lomitos-170g.webp"
+      imagen: "/multimedia/atun-en-aceite-la-campagnola-lomitos-170g.webp",
+      categoria: "Despensa"
   },
   {
       id: 7,
@@ -61,7 +68,8 @@ const productos = [
       descripcion: "Vino tinto malbec, El Enemigo, 750cc",
       precio: 5285,
       cantidad: 1,
-      imagen: "/multimedia/vino-tinto-malbec-el-enemigo-750cc.webp"
+      imagen: "/multimedia/vino-tinto-malbec-el-enemigo-750cc.webp",
+      categoria: "Bebida"
   },
   {
       id: 8,
@@ -70,7 +78,8 @@ const productos = [
       descripcion: "Aceite de oliva, Oliva Ilustre extra virgen, 2l",
       precio: 3760,
       cantidad: 1,
-      imagen: "/multimedia/aceite-de-oliva-ilustre-extra-virgen-2l.webp"
+      imagen: "/multimedia/aceite-de-oliva-ilustre-extra-virgen-2l.webp",
+      categoria: "Despensa"
   },
   {
       id: 9,
@@ -79,16 +88,15 @@ const productos = [
       descripcion: "Mayonesa, Hellmanns regular doy pack, 475g",
       precio: 267,
       cantidad: 1,
-      imagen: "/multimedia/mayonesa-hellmanns-regular-doy-pack-475g.webp"
+      imagen: "/multimedia/mayonesa-hellmanns-regular-doy-pack-475g.webp",
+      categoria: "Heladera"
   }
 ]
 
-export default productos
-
-export const getFetch = () => {
-    return new Promise (( res, rej) => {
+export const traerProductosId = (id) => {
+    return new Promise((resolved, rejected)=>{
         setTimeout(()=>{
-            res(productos)
+            resolved( id ? productos.find(producto => producto.id === id) : productos)
         }, 1000)
     })
 }

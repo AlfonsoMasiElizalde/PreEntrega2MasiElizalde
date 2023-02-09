@@ -1,7 +1,9 @@
 
 function CartWidget() {
   return (
-    <h2 className="mostrar-carrito">🛒</h2>
+    <h2 className="mostrar-carrito">
+      🛒
+    </h2>
   )
 }
 

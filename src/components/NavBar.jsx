@@ -20,7 +20,7 @@ function NavBar() {
                 </li>
             </ul>
         </h2>
-        <Link to={"/Carrito"}>
+        <Link to={"/carrito"}>
             <CartWidget />
         </Link>
     </nav>
