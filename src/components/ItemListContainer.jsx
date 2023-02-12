@@ -1,27 +1,48 @@
-import { Link } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
 
-import { productos } from "./ProductsList"
+import ItemList from "./ItemList"
+import { traerProductos } from "./ProductsList"
+
 
 export const ItemListContainer = () => {
 
+  const [ productos, setProductos ] = useState([])
+  const [ loading, setLoading ] = useState(true)
+
+  const { idCategoria } = useParams()
+
+  useEffect( () => {
+    if (idCategoria) {
+      traerProductos()
+        .then(res => {
+          setProductos(res.filter(producto => producto.categoria === idCategoria))
+        })
+        .catch(error => console.log(error))
+        .finally(()=>setLoading(false))
+    } else {
+      traerProductos()
+        .then(res => {
+          setProductos(res)
+        })
+        .catch(error => console.log(error))
+        .finally( () => setLoading(false))
+    }
+  }, [idCategoria])
+
   return (
+
+    loading
+    ?
+      <h2 style={{
+        display:"flex",
+        justifyContent:"center",
+        fontSize:"32px"        
+      }}>Por favor espere a que termine de cargar...</h2>
+    :
+
     <div className="mostrador-productos">
-
-      {productos.map( producto => 
-
-        <div key={producto.id} className="card">
-
-          <Link to={`/producto/${producto.id}`}>
-
-            <img src={producto.imagen} alt={producto.descripcion}/>
-            <h3 className="card-title">{producto.producto}, {producto.marca}</h3>
-            <p className="card-price">$ {producto.precio}</p>
-            
-          </Link>
-
-        </div>
-
-      )}
+      <ItemList productos={productos} />
     </div>
   )
 }

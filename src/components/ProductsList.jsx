@@ -1,5 +1,5 @@
 
-export const productos = [
+let productos = [
   {
       id: "1",
       producto: "Pan blanco",
@@ -93,10 +93,10 @@ export const productos = [
   }
 ]
 
-export const traerProductosId = (id) => {
-    return new Promise((resolved, rejected)=>{
+export const traerProductos = (id) => {
+    return new Promise((res, rej)=>{
         setTimeout(()=>{
-            resolved( id ? productos.find(producto => producto.id === id) : productos)
+            res( id ? productos.find(producto => producto.id === id) : productos)
         }, 1000)
     })
 }
