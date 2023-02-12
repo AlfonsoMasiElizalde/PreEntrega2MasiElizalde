@@ -12,6 +12,8 @@ export const ItemListContainer = () => {
 
   const { idCategoria } = useParams()
 
+  console.log(idCategoria)
+
   useEffect( () => {
     if (idCategoria) {
       traerProductos()

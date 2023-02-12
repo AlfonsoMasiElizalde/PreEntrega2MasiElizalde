@@ -1,6 +1,8 @@
 
 const ItemDetail = ({producto}) => {
 
+  console.log(producto)
+
   return (
     <div style={{
       display:"flex",

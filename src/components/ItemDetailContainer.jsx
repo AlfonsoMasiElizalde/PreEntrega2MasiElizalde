@@ -15,9 +15,11 @@ const ItemDetailContainer = () => {
       .catch(error => setProducto(error))
   }, [])
 
+  console.log(producto)
+
   return (
     <div>
-      <ItemDetail producto={producto} />
+      <ItemDetail producto = {producto} />
     </div>
   )
 }
