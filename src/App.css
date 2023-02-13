@@ -99,3 +99,26 @@ link {
   font-size: 22px;
   color: green;
 }
+
+/* Detalle Productos */
+.card-detail-container {
+  display: flex;
+  justify-content: center;
+}
+.card-detail {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  margin: 20px;
+  text-align: center;
+  font-family: Arial;
+}
+.card-detail img {
+  width: 100%;
+}
+.card-detail-title {
+  padding: 20px;
+}
+.card-detail-price {
+  font-size: 22px;
+  color: green;
+}

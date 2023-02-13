@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 
 import ItemList from "./ItemList"
 import { traerProductos } from "./ProductsList"
@@ -11,8 +11,6 @@ export const ItemListContainer = () => {
   const [ loading, setLoading ] = useState(true)
 
   const { idCategoria } = useParams()
-
-  console.log(idCategoria)
 
   useEffect( () => {
     if (idCategoria) {
@@ -42,9 +40,22 @@ export const ItemListContainer = () => {
         fontSize:"32px"        
       }}>Por favor espere a que termine de cargar...</h2>
     :
-
-    <div className="mostrador-productos">
-      <ItemList productos={productos} />
+    <div>
+      <h2>
+        Elegi tu producto por categoria!
+        <ul style={{
+          display:"flex",
+          justifyContent:"space-evenly",
+          alignContent:"center",
+        }}>
+          <Link to={"categoria/despensa"} >Despensa</Link>
+          <Link to={"categoria/heladera"} >Heladera</Link>
+          <Link to={"categoria/bebida"} >Bebida</Link>
+        </ul>
+      </h2>
+      <div className="mostrador-productos">
+        <ItemList productos={productos} />
+      </div>
     </div>
   )
 }
