@@ -7,7 +7,7 @@ let productos = [
       descripcion: "Pan blanco, Bimbo artesano, 500g",
       precio: 556,
       cantidad: 1,
-      imagen: "multimedia/pan-blanco-bimbo-artesano-500g.webp",
+      imagen: "/multimedia/pan-blanco-bimbo-artesano-500g.webp",
       categoria: "despensa"
   },
   {
@@ -17,7 +17,7 @@ let productos = [
       descripcion: "Queso feteado, SanCor dambo, 200g",
       precio: 548,
       cantidad: 1,
-      imagen: "multimedia/queso-feteado-sancor-danbo-200g.webp",
+      imagen: "/multimedia/queso-feteado-sancor-danbo-200g.webp",
       categoria: "heladera"
   },
   {
@@ -27,7 +27,7 @@ let productos = [
       descripcion: "Jamon cocido feteado, Paladini, 200g",
       precio: 498,
       cantidad: 1,
-      imagen: "multimedia/jamón-cocido-paladini-feteado-fetas-finas-200g.webp",
+      imagen: "/multimedia/jamón-cocido-paladini-feteado-fetas-finas-200g.webp",
       categoria: "heladera"
   },
   {
